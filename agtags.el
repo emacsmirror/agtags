@@ -1,9 +1,9 @@
 ;;; agtags.el --- A frontend to GNU Global -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2018-2024 Vietor Liu
+;; Copyright (C) 2018-2025 Vietor Liu
 
 ;; Author: Vietor Liu <vietor.liu@gmail.com>
-;; Version: 0.3.0
+;; Version: 0.4.0
 ;; Keywords: tools, convenience
 ;; Created: 2018-12-14
 ;; URL: https://github.com/vietor/agtags
