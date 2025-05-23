@@ -227,10 +227,11 @@ If there's a string at point, offer that as a default."
           (cd current-root)
           (call-process "global" nil nil nil "-u" (concat "--single-update=" buffer-file-name)))))))
 
-(defadvice compile-goto-error (around agtags activate)
+(defun agtags--compile-goto-error (orig-fun &rest args)
   "Use same window when goto selected."
   (let ((display-buffer-overriding-action agtags--display-buffer-dwim))
-    ad-do-it))
+    (apply orig-fun args)))
+(advice-add 'compile-goto-error :around #'agtags--compile-goto-error)
 
 (defconst agtags--global-mode-font-lock-keywords
   '(("^Global \\(exited abnormally\\|interrupt\\|killed\\|terminated\\)\\(?:.*with code \\([0-9]+\\)\\)?.*"
